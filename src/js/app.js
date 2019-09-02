@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-
 import './../sass/style.scss';
+import Items from "./items";
+import Room from "./room"
 
 class App extends Component {
     render() {
-        return <div>działa :)</div>;
+        return (
+            <>
+                <div>Ciekawe</div>
+                <Room />
+                <Items />
+            </>
+        );
     }
 }
 
