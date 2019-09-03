@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './../sass/style.scss';
-import Items from "./items";
+import ItemsList from "./itemsList";
 import Room from "./room"
 
 class App extends Component {
     render() {
         return (
             <>
-                <div>Ciekawe</div>
-                <Room />
-                <Items />
+                <div className={"container"}>
+                    <Room />
+                    <ItemsList />
+                </div>
             </>
         );
     }
 }
 
 ReactDOM.render(<App/>, document.getElementById("app"));
-// export default App;
