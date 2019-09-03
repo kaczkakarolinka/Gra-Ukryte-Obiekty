@@ -34,8 +34,16 @@ import bible from "../images/bible.png"
 import book from "../images/book.png"
 import calc from "../images/calc.png"
 import certificate from "../images/certificate.png"
+import chess from "../images/chess.png"
+import creditCard from "../images/creditcard.png"
+import doorHanger from "../images/doorhanger.png"
+import glasses from "../images/glasses.png"
+import lipstick from "../images/lipstick.png"
+import usb from "../images/usb.png"
+import watch from "../images/watch.png"
 
 class Items extends Component {
+
     render() {
         return (
             <>
@@ -70,6 +78,13 @@ class Items extends Component {
                 <img src={book} className={"book"}/>
                 <img src={calc} className={"calc"}/>
                 <img src={certificate} className={"certificate"}/>
+                <img src={chess} className={"chess"}/>
+                <img src={creditCard} className={"creditCard"} onClick={this.clickHandle}/>
+                <img src={doorHanger} className={"doorHanger"}/>
+                <img src={glasses} className={"glasses"}/>
+                <img src={lipstick} className={"lipstick"}/>
+                <img src={usb} className={"usb"}/>
+                <img src={watch} className={"watch"}/>
             </>
         )
     }

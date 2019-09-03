@@ -4,7 +4,7 @@
   height: 260px;
   left: 200px;
   top: 350px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .shelf {
@@ -22,15 +22,16 @@
   height: 400px;
   left: 700px;
   top: 290px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .carpet {
   position: absolute;
   width: 300px;
-  height: 300px;
-  top: 500px;
+  height: 200px;
+  top: 540px;
   left: 180px;
+  z-index: 1;
 }
 
 .lamp2 {
@@ -87,7 +88,7 @@
   height: 150px;
   left: 950px;
   top: 500px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .vaccum {
@@ -95,6 +96,7 @@
   width: 200px;
   height: 200px;
   top: 450px;
+  left: 100px;
   z-index: 1;
 }
 
@@ -113,7 +115,6 @@
   height: 200px;
   left: 800px;
   top: 540px;
-  z-index: 1;
 }
 
 .boks {
@@ -130,7 +131,7 @@
   height: 130px;
   left: 250px;
   top: 380px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .darts {
@@ -156,6 +157,7 @@
   width: 100px;
   left: 750px;
   top: 500px;
+  z-index: 2;
 }
 
 .radio {
@@ -196,27 +198,27 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  top: 560px;
-  left: 540px;
-  z-index: 0;
+  top: 550px;
+  left: 480px;
+  z-index: 2;
 }
 
 .baseball {
   position: absolute;
   width: 50px;
   height: 50px;
-  left: 830px;
+  left: 730px;
   top: 650px;
-  z-index: 0;
+  z-index: 2;
 }
 
 .basketball {
   position: absolute;
   width: 100px;
   height: 100px;
-  left: 180px;
-  top: 480px;
-  z-index: 0;
+  left: 0;
+  top: 550px;
+  z-index: 3;
 }
 
 .brush {
@@ -241,14 +243,16 @@
   height: 100px;
   top: 600px;
   left: 150px;
+  z-index: 2;
 }
 
 .calc {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  left: 720px;
-  top: 430px;
+  width: 60px;
+  height: 60px;
+  left: 560px;
+  top: 495px;
+  z-index: 3;
 }
 
 .certificate {
@@ -257,4 +261,66 @@
   height: 150px;
   left: 550px;
   top: 170px;
+}
+
+.chess {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 420px;
+  top: 500px;
+  z-index: 3;
+}
+
+.creditCard {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 350px;
+  top: 450px;
+  z-index: 3;
+}
+
+.doorHanger {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 510px;
+  top: 83px;
+  z-index: 3;
+}
+
+.glasses {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 100px;
+  top: 145px;
+  z-index: 4;
+}
+
+.lipstick {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 160px;
+  top: 160px;
+  z-index: 4;
+}
+
+.usb {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left:1000px;
+  top: 650px;
+  z-index: 3;
+}
+
+.watch {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 750px;
+  top: 300px;
 }

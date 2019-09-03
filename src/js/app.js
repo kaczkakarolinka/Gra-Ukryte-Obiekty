@@ -5,12 +5,17 @@ import ItemsList from "./itemsList";
 import Room from "./room"
 
 class App extends Component {
+    state = {
+        counter: 0,
+    };
+
+
     render() {
         return (
             <>
                 <div className={"container"}>
-                    <Room />
-                    <ItemsList />
+                    <Room counter={this.state.counter} />
+                    <ItemsList counter={this.state.counter} />
                 </div>
             </>
         );

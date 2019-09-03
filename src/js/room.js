@@ -7,12 +7,14 @@ import Items from "./items"
 
 class Room extends Component {
     state = {
-        start: false
+        start: false,
+        counter: this.props.counter
     };
 
     handleButtonClick = () => {
         this.setState({
             start: true,
+            counter: this.state.counter,
         })
 };
     render() {

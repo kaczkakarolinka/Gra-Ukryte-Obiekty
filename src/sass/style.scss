@@ -22,14 +22,36 @@ body {
   width: 200px;
   height: 50px;
   border: 1px solid black;
-  background-color: white;
+  background-color: transparent;
   border-radius: 25px;
 }
 
 .startButton:hover {
   font-size: 15px;
-  width: 210px;
-  height: 55px;
+  border: 2px solid black;
+}
+
+.startButton:active {
+  box-shadow: 5px 5px 5px black;
+}
+
+.startScreenItems {
+  width: 343px;
+  height: 743px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 10px;
+}
+
+.timeout {
+  width: 200px;
+  height: 30px;
+  border: 2px solid #B23807;
+  border-radius: 20px;
+  margin: 10px;
 }
 
 .container {
@@ -57,9 +79,19 @@ body {
   height: 203px;
 }
 
-.itemsList {
+.sideList {
   background-color: white;
   border: 5px solid #B23807;
   width: 343px;
   height: 743px;
 }
+
+.itemsList {
+  margin-top: 100px; //sprobuj to potem zrobic flexem
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+}
+
