@@ -20,64 +20,52 @@ import creditCard from "../images/creditcard.png"
 class ItemsList extends Component {
     state = {
         start: false,
-        timeout: 300,
-        counter: this.props.counter,
     };
 
     handleClick = () => {
         this.setState({
             start: true,
         });
-        this.id = setInterval(() => {
-            this.setState({
-                timeout: this.state.timeout - 1,
-            });
-            if (this.state.timeout === 0) {
-                clearInterval(this.id);
-                this.setState({
-                    timeout: 0,
-                    start: false,
-                });
-            }
-        }, 1000);
+        this.props.setTimeout();
     };
-
 
     render() {
         if (this.state.start) {
             return (
                 <div>
                     <div className={"sideList"}>
-                        <div className={"timeout"}>Pozostały czas: {this.state.timeout} s.</div>
-                        <div>{this.props.counter} / 15</div>
+                        <section className={"infoSection"}>
+                            <div className={"timeout"}>Pozostały czas: {this.props.timeout} s.</div>
+                            <div className={"counter"}>{this.props.counter} / 15</div>
+                        </section>
                         <div className={"itemsList"}>
-                            <img src={usb} className={"item"}/>
-                            <img src={baseball} className={"item"}/>
-                            <img src={basketball} className={"item"}/>
-                            <img src={iron} className={"item"}/>
-                            <img src={coffee} className={"item"}/>
-                            <img src={hanger} className={"item"}/>
-                            <img src={lipstick} className={"item"}/>
-                            <img src={calc} className={"item"}/>
-                            <img src={chess} className={"item"}/>
-                            <img src={brush} className={"item"}/>
-                            <img src={banana} className={"item"}/>
-                            <img src={mirror} className={"item"}/>
-                            <img src={bible} className={"item"}/>
-                            <img src={glasses} className={"item"}/>
-                            <img src={creditCard} className={"item"}/>
+                            <img src={usb} className={`${this.props.usb === 'usb' ? 'founded' : ''} item`} />
+                            <img src={baseball} className={`${this.props.baseball === 'baseball' ? 'founded' : ''} item`}/>
+                            <img src={basketball} className={`${this.props.basketball === 'basketball' ? 'founded' : ''} item`}/>
+                            <img src={iron} className={`${this.props.iron === 'iron' ? 'founded' : ''} item`}/>
+                            <img src={coffee} className={`${this.props.coffee === 'coffee' ? 'founded' : ''} item`}/>
+                            <img src={hanger} className={`${this.props.doorHanger === 'doorHanger' ? 'founded' : ''} item`}/>
+                            <img src={lipstick} className={`${this.props.lipstick === 'lipstick' ? 'founded' : ''} item`}/>
+                            <img src={calc} className={`${this.props.calc === 'calc' ? 'founded' : ''} item`}/>
+                            <img src={chess} className={`${this.props.chess === 'chess' ? 'founded' : ''} item`}/>
+                            <img src={brush} className={`${this.props.brush === 'brush' ? 'founded' : ''} item`}/>
+                            <img src={banana} className={`${this.props.banana === 'banana' ? 'founded' : ''} item`}/>
+                            <img src={mirror} className={`${this.props.mirror === 'mirror' ? 'founded' : ''} item`}/>
+                            <img src={bible} className={`${this.props.bible === 'bible' ? 'founded' : ''} item`}/>
+                            <img src={glasses} className={`${this.props.glasses === 'glasses' ? 'founded' : ''} item`}/>
+                            <img src={creditCard} className={`${this.props.creditCard === 'creditCard' ? 'founded' : ''} item`}/>
                         </div>
                     </div>
                 </div>
             )
-        }  else if (this.state.timeout !== 0) {
+        }  else if (this.props.timeout !== 0) {
             return (
                 <div className={"startScreenItems"}>
-                    <h2>Po rozpoczęciu gry masz 5 minut na znalezienie przedmiotów</h2>
+                    <h2>Po odsłonięciu przedmiotów masz 5 minut na ich znalezienie</h2>
                     <button className={"startButton"} onClick={this.handleClick}>Odsłoń przedmioty</button>
                 </div>
             )
-        } else if (this.state.timeout <= 0) {
+        } else if (this.props.timeout <= 0) {
             return (
                 <div className={"startScreenItems"}>
                     <h2>Twój czas się skończył</h2>

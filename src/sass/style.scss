@@ -35,6 +35,17 @@ body {
   box-shadow: 5px 5px 5px black;
 }
 
+.finalBorder {
+  width: 500px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .startScreenItems {
   width: 343px;
   height: 743px;
@@ -46,12 +57,32 @@ body {
   font-size: 10px;
 }
 
+.infoSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .timeout {
   width: 200px;
   height: 30px;
   border: 2px solid #B23807;
   border-radius: 20px;
-  margin: 10px;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 3px;
+  font-weight: bold;
+}
+
+.counter {
+  width: 100px;
+  height: 30px;
+  border: 2px solid #B23807;
+  border-radius: 20px;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 3px;
+  font-weight: bold;
 }
 
 .container {
@@ -87,11 +118,18 @@ body {
 }
 
 .itemsList {
-  margin-top: 100px; //sprobuj to potem zrobic flexem
+  margin-top: 100px;
+  margin-left: 15px;
 }
 
 .item {
   width: 100px;
   height: 100px;
+}
+
+.disabled {
+  border: 2px solid yellow;
+  border-radius: 50%;
+  pointer-events: none;
 }
 

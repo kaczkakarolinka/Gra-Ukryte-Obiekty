@@ -43,6 +43,31 @@ import usb from "../images/usb.png"
 import watch from "../images/watch.png"
 
 class Items extends Component {
+    state = {
+        mirror: '',
+        usb: '',
+        baseball: '',
+        basketball: '',
+        iron: '',
+        coffee: '',
+        calc: '',
+        banana: '',
+        chess: '',
+        doorHanger: '',
+        lipstick: '',
+        glasses: '',
+        creditCard: '',
+        bible: '',
+        brush: '',
+    };
+
+
+    addClass = (e) => {
+        const clicked = e.target;
+             this.setState({
+                [clicked.id]: clicked.id,
+            });
+    };
 
     render() {
         return (
@@ -55,7 +80,7 @@ class Items extends Component {
                 <img src={window} className={"window"}/>
                 <img src={lamp} className={"lamp"}/>
                 <img src={wardrobe} className={"wardrobe"}/>
-                <img src={mirror} className={"mirror"}/>
+                <img src={mirror} className={`${this.state.mirror === 'mirror' ? 'disabled' : ''}`} id={"mirror"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
                 <img src={kontakt} className={"kontakt"}/>
                 <img src={box} className={"box"}/>
                 <img src={vaccum} className={"vaccum"}/>
@@ -64,26 +89,26 @@ class Items extends Component {
                 <img src={boks} className={"boks"}/>
                 <img src={telephone} className={"telephone"}/>
                 <img src={darts} className={"darts"}/>
-                <img src={coffee} className={"coffee"}/>
-                <img src={iron} className={"iron"}/>
+                <img src={coffee} className={`${this.state.coffee === 'coffee' ? 'disabled' : ''}`} id={"coffee"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={iron} className={`${this.state.iron === 'iron' ? 'disabled' : ''}`} id={"iron"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
                 <img src={radio} className={"radio"}/>
                 <img src={triangles} className={"triangles"}/>
                 <img src={trumpet} className={"trumpet"}/>
                 <img src={bat} className={"bat"}/>
-                <img src={banana} className={"banana"}/>
-                <img src={baseball} className={"baseball"}/>
-                <img src={basketball} className={"basketball"}/>
-                <img src={brush} className={"brush"}/>
-                <img src={bible} className={"bible"}/>
+                <img src={banana} className={`${this.state.banana === 'banana' ? 'disabled' : ''}`} id={"banana"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={baseball} className={`${this.state.baseball === 'baseball' ? 'disabled' : ''}`} id={"baseball"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={basketball} className={`${this.state.basketball === 'basketball' ? 'disabled' : ''}`} id={"basketball"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={brush} className={`${this.state.brush === 'brush' ? 'disabled' : ''}`} id={"brush"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={bible} className={`${this.state.bible === 'bible' ? 'disabled' : ''}`} id={"bible"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
                 <img src={book} className={"book"}/>
-                <img src={calc} className={"calc"}/>
+                <img src={calc} className={`${this.state.calc === 'calc' ? 'disabled' : ''}`} id={"calc"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
                 <img src={certificate} className={"certificate"}/>
-                <img src={chess} className={"chess"}/>
-                <img src={creditCard} className={"creditCard"} onClick={this.clickHandle}/>
-                <img src={doorHanger} className={"doorHanger"}/>
-                <img src={glasses} className={"glasses"}/>
-                <img src={lipstick} className={"lipstick"}/>
-                <img src={usb} className={"usb"}/>
+                <img src={chess} className={`${this.state.chess === 'chess' ? 'disabled' : ''}`} id={"chess"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={creditCard} className={`${this.state.creditCard === 'creditCard' ? 'disabled' : ''}`} id={"creditCard"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={doorHanger} className={`${this.state.doorHanger === 'doorHanger' ? 'disabled' : ''}`} id={"doorHanger"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={glasses} className={`${this.state.glasses === 'glasses' ? 'disabled' : ''}`} id={"glasses"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={lipstick} className={`${this.state.lipstick === 'lipstick' ? 'disabled' : ''}`} id={"lipstick"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
+                <img src={usb} className={`${this.state.usb === 'usb' ? 'disabled' : ''}`} id={"usb"} onClick={(e) => {this.props.counterClick(e); this.addClass(e)}}/>
                 <img src={watch} className={"watch"}/>
             </>
         )

@@ -65,7 +65,7 @@
   z-index: 1;
 }
 
-.mirror {
+#mirror {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -142,7 +142,7 @@
   top: 150px;
 }
 
-.coffee {
+#coffee {
   position: absolute;
   height: 100px;
   width: 100px;
@@ -151,7 +151,7 @@
   z-index: 1;
 }
 
-.iron {
+#iron {
   position: absolute;
   height: 100px;
   width: 100px;
@@ -194,7 +194,7 @@
   top: 400px;
 }
 
-.banana {
+#banana {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -203,7 +203,7 @@
   z-index: 2;
 }
 
-.baseball {
+#baseball {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -212,7 +212,7 @@
   z-index: 2;
 }
 
-.basketball {
+#basketball {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -221,7 +221,7 @@
   z-index: 3;
 }
 
-.brush {
+#brush {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -230,7 +230,7 @@
   left: 120px;
 }
 
-.bible {
+#bible {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -246,7 +246,7 @@
   z-index: 2;
 }
 
-.calc {
+#calc {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -263,7 +263,7 @@
   top: 170px;
 }
 
-.chess {
+#chess {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -272,7 +272,7 @@
   z-index: 3;
 }
 
-.creditCard {
+#creditCard {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -281,7 +281,7 @@
   z-index: 3;
 }
 
-.doorHanger {
+#doorHanger {
   position: absolute;
   width: 80px;
   height: 80px;
@@ -290,7 +290,7 @@
   z-index: 3;
 }
 
-.glasses {
+#glasses {
   position: absolute;
   width: 80px;
   height: 80px;
@@ -299,7 +299,7 @@
   z-index: 4;
 }
 
-.lipstick {
+#lipstick {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -308,7 +308,7 @@
   z-index: 4;
 }
 
-.usb {
+#usb {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -323,4 +323,8 @@
   height: 60px;
   left: 750px;
   top: 300px;
+}
+
+.founded {
+  visibility: hidden;
 }
