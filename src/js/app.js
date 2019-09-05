@@ -7,7 +7,8 @@ import Room from "./room"
 class App extends Component {
     state = {
         counter: 0,
-        timeout: 300,
+        minutes: 5,
+        seconds: 0,
         start: false,
         mirror: '',
         usb: '',
@@ -36,19 +37,32 @@ class App extends Component {
     setTimeout = (e) => {
         this.id = setInterval(() => {
             this.setState({
-                timeout: this.state.timeout - 1,
+                seconds: this.state.seconds - 1,
             });
-            if (this.state.timeout === 0) {
+            if (this.state.minutes === 0 && this.state.seconds === '0' + 0) {
                 clearInterval(this.id);
                 this.setState({
-                    timeout: 0,
+                    minutes: 0,
+                    seconds: '00',
                     start: false,
                 });
             } else if (this.state.counter === 15) {
                 clearInterval(this.id);
                 this.setState({
-                    timeout: this.state.timeout,
+                    minutes: this.state.minutes,
+                    seconds: this.state.seconds,
                 })
+            } else if (this.state.seconds < '00') {
+                this.setState({
+                    minutes: this.state.minutes - 1,
+                    seconds: 59,
+                })
+            } else if (this.state.counter === 15 && this.state.seconds < 10) {
+                this.setState({
+                    minutes: this.state.minutes,
+                    seconds: '0' + this.state.seconds,
+                });
+                clearInterval(this.id);
             }
         }, 1000);
     };
@@ -61,12 +75,14 @@ class App extends Component {
                     <Room
                         counterClick={this.counterClick}
                         counter={this.state.counter}
-                        timeout={this.state.timeout}
+                        minutes={this.state.minutes}
+                        seconds={this.state.seconds}
                     />
                     <ItemsList
                         counter={this.state.counter}
                         setTimeout={this.setTimeout}
-                        timeout={this.state.timeout}
+                        minutes={this.state.minutes}
+                        seconds={this.state.seconds}
                         start={this.state.start}
                         usb={this.state.usb}
                         baseball={this.state.baseball}

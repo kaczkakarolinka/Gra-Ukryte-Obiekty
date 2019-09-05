@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import './../sass/style.scss';
-import './../sass/items.scss'
+import './../sass/items.scss';
+import './../sass/clickableItems.scss';
 import chair from "../images/chair.png";
 import shelf from "../images/shelf.png";
 import bed from "../images/bed.png"

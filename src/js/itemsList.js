@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './../sass/style.scss';
+import './../sass/clickableItems.scss'
 import usb from "../images/usb.png"
 import baseball from "../images/baseball.png"
 import basketball from "../images/basketball.png"
@@ -30,12 +31,19 @@ class ItemsList extends Component {
     };
 
     render() {
+        let timeout;
+        if (this.props.seconds < 10) {
+            timeout = <div className={"timeout"}>Pozostały czas: {this.props.minutes}:0{this.props.seconds}</div>
+        } else {
+            timeout = <div className={"timeout"}>Pozostały czas: {this.props.minutes}:{this.props.seconds}</div>
+        }
+
         if (this.state.start) {
             return (
                 <div>
                     <div className={"sideList"}>
                         <section className={"infoSection"}>
-                            <div className={"timeout"}>Pozostały czas: {this.props.timeout} s.</div>
+                            {timeout}
                             <div className={"counter"}>{this.props.counter} / 15</div>
                         </section>
                         <div className={"itemsList"}>
@@ -62,7 +70,7 @@ class ItemsList extends Component {
             return (
                 <div className={"startScreenItems"}>
                     <h2>Po odsłonięciu przedmiotów masz 5 minut na ich znalezienie</h2>
-                    <button className={"startButton"} onClick={this.handleClick}>Odsłoń przedmioty</button>
+                    <button className={"startButtonList"} onClick={this.handleClick}>Odsłoń przedmioty</button>
                 </div>
             )
         } else if (this.props.timeout <= 0) {

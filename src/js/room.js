@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './../sass/style.scss';
 import "./../sass/items.scss"
+import "./../sass/clickableItems.scss"
 import Items from "./items"
+import startScreen from "../images/Ukryte Obiekty.png"
+import congrats from "../images/Congrats.png"
 
 
 class Room extends Component {
@@ -17,6 +20,13 @@ class Room extends Component {
 };
 
     render() {
+        let yourTime;
+        if (this.props.seconds < 60 && this.props.seconds > 50) {
+            yourTime = <h3 className={'time'}>Twój czas to: {4 - this.props.minutes}:0{60 - this.props.seconds} </h3>
+        } else {
+            yourTime = <h3 className={'time'}>Twój czas to: {4 - this.props.minutes}:{60 - this.props.seconds} </h3>
+        }
+
         if (this.state.start && this.props.counter !== 15) {
             return (
                 <div className={"roomContainer"}>
@@ -31,17 +41,15 @@ class Room extends Component {
             return (
                 <div className={"startScreen"}>
                     <div className={"finalBorder"}>
-                        <h1>GRATULACJE!</h1>
-                        <h2>Odnaleziono wszystkie obiekty!</h2>
-                        <h3>Twój czas to: {300 - this.props.timeout} s.</h3>
+                        <img src={congrats}/>
+                        {yourTime}
                     </div>
                 </div>
             )
         } else if (!this.state.start && this.props.counter === 0) {
             return (
                 <div className={"startScreen"}>
-                    <h1>GRA UKRYTE OBIEKTY</h1>
-                    <h2>Znajdź wszystkie 15 obiektów ukrytych w pokoju</h2>
+                    <img src={startScreen}/>
                     <button className={"startButton"} onClick={this.handleButtonClick}>Kliknij aby rozpocząć</button>
                 </div>
             )
