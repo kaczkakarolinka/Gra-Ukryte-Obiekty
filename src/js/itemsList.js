@@ -38,7 +38,7 @@ class ItemsList extends Component {
             timeout = <div className={"timeout"}>Pozostały czas: {this.props.minutes}:{this.props.seconds}</div>
         }
 
-        if (this.state.start) {
+        if (this.state.start && this.props.minutes > 0 && this.props.seconds > 0) {
             return (
                 <div>
                     <div className={"sideList"}>
@@ -70,10 +70,10 @@ class ItemsList extends Component {
             return (
                 <div className={"startScreenItems"}>
                     <h2>Po odsłonięciu przedmiotów masz 5 minut na ich znalezienie</h2>
-                    <button className={"startButtonList"} onClick={this.handleClick}>Odsłoń przedmioty</button>
+                    <button className={"    startButtonList"} onClick={this.handleClick}>Odsłoń przedmioty</button>
                 </div>
             )
-        } else if (this.props.timeout <= 0) {
+        } else if (this.props.minutes === 0 && this.props.seconds === 0) {
             return (
                 <div className={"startScreenItems"}>
                     <h2>Twój czas się skończył</h2>

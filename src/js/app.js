@@ -39,7 +39,7 @@ class App extends Component {
             this.setState({
                 seconds: this.state.seconds - 1,
             });
-            if (this.state.minutes === 0 && this.state.seconds === '0' + 0) {
+            if (this.state.minutes === 0 && this.state.seconds === 0) {
                 clearInterval(this.id);
                 this.setState({
                     minutes: 0,
