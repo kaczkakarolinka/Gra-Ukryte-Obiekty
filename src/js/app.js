@@ -43,7 +43,7 @@ class App extends Component {
                 clearInterval(this.id);
                 this.setState({
                     minutes: 0,
-                    seconds: '00',
+                    seconds: 0,
                     start: false,
                 });
             } else if (this.state.counter === 15) {

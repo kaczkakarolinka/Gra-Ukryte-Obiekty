@@ -38,48 +38,48 @@ class ItemsList extends Component {
             timeout = <div className={"timeout"}>Pozostały czas: {this.props.minutes}:{this.props.seconds}</div>
         }
 
-        if (this.state.start && this.props.minutes > 0 && this.props.seconds > 0) {
-            return (
-                <div>
-                    <div className={"sideList"}>
-                        <section className={"infoSection"}>
-                            {timeout}
-                            <div className={"counter"}>{this.props.counter} / 15</div>
-                        </section>
-                        <div className={"itemsList"}>
-                            <img src={usb} className={`${this.props.usb === 'usb' ? 'founded' : ''} item`} />
-                            <img src={baseball} className={`${this.props.baseball === 'baseball' ? 'founded' : ''} item`}/>
-                            <img src={basketball} className={`${this.props.basketball === 'basketball' ? 'founded' : ''} item`}/>
-                            <img src={iron} className={`${this.props.iron === 'iron' ? 'founded' : ''} item`}/>
-                            <img src={coffee} className={`${this.props.coffee === 'coffee' ? 'founded' : ''} item`}/>
-                            <img src={hanger} className={`${this.props.doorHanger === 'doorHanger' ? 'founded' : ''} item`}/>
-                            <img src={lipstick} className={`${this.props.lipstick === 'lipstick' ? 'founded' : ''} item`}/>
-                            <img src={calc} className={`${this.props.calc === 'calc' ? 'founded' : ''} item`}/>
-                            <img src={chess} className={`${this.props.chess === 'chess' ? 'founded' : ''} item`}/>
-                            <img src={brush} className={`${this.props.brush === 'brush' ? 'founded' : ''} item`}/>
-                            <img src={banana} className={`${this.props.banana === 'banana' ? 'founded' : ''} item`}/>
-                            <img src={mirror} className={`${this.props.mirror === 'mirror' ? 'founded' : ''} item`}/>
-                            <img src={bible} className={`${this.props.bible === 'bible' ? 'founded' : ''} item`}/>
-                            <img src={glasses} className={`${this.props.glasses === 'glasses' ? 'founded' : ''} item`}/>
-                            <img src={creditCard} className={`${this.props.creditCard === 'creditCard' ? 'founded' : ''} item`}/>
-                        </div>
-                    </div>
-                </div>
-            )
-        }  else if (this.props.timeout !== 0) {
+        if (!this.state.start) {
             return (
                 <div className={"startScreenItems"}>
                     <h2>Po odsłonięciu przedmiotów masz 5 minut na ich znalezienie</h2>
-                    <button className={"    startButtonList"} onClick={this.handleClick}>Odsłoń przedmioty</button>
+                    <button className={"startButtonList"} onClick={this.handleClick}>Odsłoń przedmioty</button>
                 </div>
             )
-        } else if (this.props.minutes === 0 && this.props.seconds === 0) {
+        } else if (this.props.minutes === 0 && this.props.seconds === 0 && this.state.start) {
             return (
                 <div className={"startScreenItems"}>
                     <h2>Twój czas się skończył</h2>
                 </div>
             )
         }
+
+        return (
+            <div>
+                <div className={"sideList"}>
+                    <section className={"infoSection"}>
+                        {timeout}
+                        <div className={"counter"}>{this.props.counter} / 15</div>
+                    </section>
+                    <div className={"itemsList"}>
+                        <img src={usb} className={`${this.props.usb === 'usb' ? 'founded' : ''} item`} />
+                        <img src={baseball} className={`${this.props.baseball === 'baseball' ? 'founded' : ''} item`}/>
+                        <img src={basketball} className={`${this.props.basketball === 'basketball' ? 'founded' : ''} item`}/>
+                        <img src={iron} className={`${this.props.iron === 'iron' ? 'founded' : ''} item`}/>
+                        <img src={coffee} className={`${this.props.coffee === 'coffee' ? 'founded' : ''} item`}/>
+                        <img src={hanger} className={`${this.props.doorHanger === 'doorHanger' ? 'founded' : ''} item`}/>
+                        <img src={lipstick} className={`${this.props.lipstick === 'lipstick' ? 'founded' : ''} item`}/>
+                        <img src={calc} className={`${this.props.calc === 'calc' ? 'founded' : ''} item`}/>
+                        <img src={chess} className={`${this.props.chess === 'chess' ? 'founded' : ''} item`}/>
+                        <img src={brush} className={`${this.props.brush === 'brush' ? 'founded' : ''} item`}/>
+                        <img src={banana} className={`${this.props.banana === 'banana' ? 'founded' : ''} item`}/>
+                        <img src={mirror} className={`${this.props.mirror === 'mirror' ? 'founded' : ''} item`}/>
+                        <img src={bible} className={`${this.props.bible === 'bible' ? 'founded' : ''} item`}/>
+                        <img src={glasses} className={`${this.props.glasses === 'glasses' ? 'founded' : ''} item`}/>
+                        <img src={creditCard} className={`${this.props.creditCard === 'creditCard' ? 'founded' : ''} item`}/>
+                    </div>
+                </div>
+            </div>
+        )
         }
 }
 
