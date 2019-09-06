@@ -34,7 +34,7 @@ class App extends Component {
         });
     };
 
-    setTimeout = (e) => {
+    setTimeout = () => {
         this.id = setInterval(() => {
             this.setState({
                 seconds: this.state.seconds - 1,
