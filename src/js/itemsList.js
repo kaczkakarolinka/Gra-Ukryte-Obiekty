@@ -48,7 +48,8 @@ class ItemsList extends Component {
         } else if (this.props.minutes === 0 && this.props.seconds === 0 && this.state.start) {
             return (
                 <div className={"startScreenItems"}>
-                    <h2>Twój czas się skończył</h2>
+                    <h1>Twój czas się skończył</h1>
+                    <h2>Twój wynik to: {this.props.counter}</h2>
                 </div>
             )
         }
